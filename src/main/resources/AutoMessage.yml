@@ -1,0 +1,14 @@
+#自动公告
+AutoSendMessage:
+  #唯一标识
+  test:
+    #是否启用
+    Enable: true
+    #消息
+    Message: "&6欢迎&b&l%player_name%&6使用WsGermMessage插件"
+    #发送间隔 单位: 秒
+    Delay: 20
+    #是否需要权限才能看到
+    Permission: false
+    #权限
+    PermissionName: "WsGermMessage.test1"

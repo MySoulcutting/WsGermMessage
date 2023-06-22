@@ -1,0 +1,31 @@
+BigHornHud:
+  options:
+    startX: "0"
+    startY: "0"
+    startZ: "999"
+    guide: false
+    #是否取消ESC关闭界面 (可删除默认为 false)
+    escCancel: true
+  textures:
+    type: texture
+    #按钮默认的图片、GIF(如果填的是gif文件就会渲染成gif)
+    path: 'local<->textures/rotten/bg1.png'
+    locationX: "w*0.85"
+    locationY: "h*0.05"
+    locationZ: "0"
+    width: "120"
+    height: "50"
+    #是否是禁止点击悬浮的
+    invalid: false
+  text:
+    type: label
+    #文字的对齐方式 左对齐 left  右对齐 right 居中 center  可删除 默认为left
+    align: "left"
+    texts:
+      - ''
+    #是否是禁止点击悬浮的
+    invalid: false
+    scale: '1.1'
+    locationX: "w*0.86"
+    locationY: "h*0.05"
+    locationZ: "0"

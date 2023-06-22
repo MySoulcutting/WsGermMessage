@@ -1,0 +1,6 @@
+name: WsGermMessage
+version: '${project.version}'
+main: com.whitesoul.wsgermmessage.WsGermMessage
+commands:
+  hudtest:
+    description: Test command

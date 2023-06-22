@@ -1,0 +1,201 @@
+BigHornGui:
+  #options标识符表示设置这个GUI的参数(该标识符可全部删除)
+  options:
+    #设置起始坐标轴，你可以根据你的习惯来设置这个界面的原点。(如果删除此行，默认为MC界面的最上边)
+    startX: "0"
+    #设置起始坐标轴，你可以根据你的习惯来设置这个界面的原点。(如果删除此行，默认为MC界面的最左边)
+    startY: "0"
+    #此界面的优先级 优先级越大 越不会被遮住 (物品模型的默认优先级都很大，要想把物品模型遮住，Z轴就要很大) 不懂不要管 直接删去就可以 默认为 0
+    startZ: "999"
+    #是否取消ESC关闭界面 (可删除默认为 false)
+    escCancel: false
+  textures:
+    type: texture
+    #按钮默认的图片、GIF(如果填的是gif文件就会渲染成gif)
+    path: 'local<->textures/rotten/bg1.png'
+    locationX: "w*0.367"
+    locationY: "h*0.26"
+    locationZ: "0"
+    width: "280"
+    height: "220"
+    #是否是禁止点击悬浮的
+    invalid: false
+  CloseButton:
+    type: button
+    # 组件开关 （false后关闭任何效果、显示、互动、功能；删除整行后默认为不显示）
+    # 如果将 enable 后面的 true或false 设置为某个条件 将自动匹配条件开关
+    # 例如填写 enable: "%player_health% = 100" 当玩家的血量到达100时才会开启该组件
+    enable: true
+    defaultPath: 'local<->textures/rotten/sel4.png'
+    #悬浮时改变defaultPath的颜色 此选项可以作为没有悬浮效果贴图的备选方案
+    hoverColor: 0xFFAAAAAA
+    #悬浮到按钮播放声音(可删除)
+    hoverSound: 'minecraft:ui.button.click'
+    #点击按钮播放声音(可删除)
+    clickSound: 'minecraft:ui.button.click'
+    #设置按钮位置
+    locationX: "w*0.515"
+    locationY: "h*0.6"
+    #设置按钮优先级
+    locationZ: "0"
+    #设置按钮大小
+    width: "100"
+    height: "20"
+    #是否吞掉点击 默认true
+    #这样就不会穿透点击到其他组件了
+    swallow: true
+    #是否开启真实的边缘计算悬浮检测
+    #默认为false
+    #开启后会根据defaultPath的透明区域生成检测区域 只有悬浮在非透明区域才算悬浮
+    realHover: false
+    #是否是禁止点击悬浮状态下的按钮
+    invalid: false
+    #交互冷却 单位毫秒 默认冷却为100ms
+    interactCooldown: 100
+    #默认的按钮动画(可删除)
+    animations:
+      - "default_rotate"
+    #悬浮到按钮时的动画(可删除)
+    hoverAnimations:
+      - "default_rotate"
+    #文本对齐模式 可删除
+    align: "center"
+    #是否渲染文字阴影 默认为 true
+    textShadow: true
+    #是否悬浮时渲染文字阴影 默认为 true
+    hoverTextShadow: true
+    #自动换行的像素长度 每行超过长度的字符串将会自动被换行到下一行 (默认为不自动换行)
+    textSplitWidth: "100"
+    #自动换行的像素长度 每行超过长度的字符串将会自动被换行到下一行 (默认为不自动换行)
+    hoverTextSplitWidth: "100"
+    #渲染该button上的字体使用的ttf字体名 ttf 字体要放入 assets/germmod/font/ 下,字体名就是文件名去掉.ttf后缀
+    #放入字体后可以在germmodui.cfg 填写读取字体的精度 不写默认是50
+    #强烈不建议放入过多的字体，耗玩家客户端内存
+    #可删除 默认为 minecraft 的原版字体
+    font: "default"
+    #加载的特殊字体的文字大小，仅对特殊字体ttf有效 默认为27
+    fontSize: 27
+    #字体描边 范围 [0-1] 默认为0
+    stroke: 0
+    #字体描边颜色 默认为 0xFF000001
+    strokeColor: 0xFF000001
+    #在单行中超过该长度的文本将会被渲染为省略号
+    omitWidth: "w*0.1"
+    #默认字符串将显示在按钮中间，支持PAPI变量(可删除)
+    texts:
+      - "&e点我关闭界面"
+    #默认字符串大小 默认1
+    textScale: "1"
+    #对齐模式 可删除
+    hoverAlign: "center"
+    clickDos: #鼠标左键时候执行dos(可删除)
+      - "open<->null" #打开另一个界面
+  SendButton:
+    type: button
+    # 组件开关 （false后关闭任何效果、显示、互动、功能；删除整行后默认为不显示）
+    # 如果将 enable 后面的 true或false 设置为某个条件 将自动匹配条件开关
+    # 例如填写 enable: "%player_health% = 100" 当玩家的血量到达100时才会开启该组件
+    enable: true
+    defaultPath: 'local<->textures/rotten/sel4.png'
+    #悬浮时改变defaultPath的颜色 此选项可以作为没有悬浮效果贴图的备选方案
+    hoverColor: 0xFFAAAAAA
+    #悬浮到按钮播放声音(可删除)
+    hoverSound: 'minecraft:ui.button.click'
+    #点击按钮播放声音(可删除)
+    clickSound: 'minecraft:ui.button.click'
+    #设置按钮位置
+    locationX: "w*0.375"
+    locationY: "h*0.6"
+    #设置按钮优先级
+    locationZ: "0"
+    #设置按钮大小
+    width: "100"
+    height: "20"
+    #是否吞掉点击 默认true
+    #这样就不会穿透点击到其他组件了
+    swallow: true
+    #是否开启真实的边缘计算悬浮检测
+    #默认为false
+    #开启后会根据defaultPath的透明区域生成检测区域 只有悬浮在非透明区域才算悬浮
+    realHover: false
+    #是否是禁止点击悬浮状态下的按钮
+    invalid: false
+    #交互冷却 单位毫秒 默认冷却为100ms
+    interactCooldown: 100
+    #默认的按钮动画(可删除)
+    animations:
+      - "default_rotate"
+    #悬浮到按钮时的动画(可删除)
+    hoverAnimations:
+      - "default_rotate"
+    #文本对齐模式 可删除
+    align: "center"
+    #是否渲染文字阴影 默认为 true
+    textShadow: true
+    #是否悬浮时渲染文字阴影 默认为 true
+    hoverTextShadow: true
+    #自动换行的像素长度 每行超过长度的字符串将会自动被换行到下一行 (默认为不自动换行)
+    textSplitWidth: "100"
+    #自动换行的像素长度 每行超过长度的字符串将会自动被换行到下一行 (默认为不自动换行)
+    hoverTextSplitWidth: "100"
+    #渲染该button上的字体使用的ttf字体名 ttf 字体要放入 assets/germmod/font/ 下,字体名就是文件名去掉.ttf后缀
+    #放入字体后可以在germmodui.cfg 填写读取字体的精度 不写默认是50
+    #强烈不建议放入过多的字体，耗玩家客户端内存
+    #可删除 默认为 minecraft 的原版字体
+    font: "default"
+    #加载的特殊字体的文字大小，仅对特殊字体ttf有效 默认为27
+    fontSize: 27
+    #字体描边 范围 [0-1] 默认为0
+    stroke: 0
+    #字体描边颜色 默认为 0xFF000001
+    strokeColor: 0xFF000001
+    #在单行中超过该长度的文本将会被渲染为省略号
+    omitWidth: "w*0.1"
+    #默认字符串将显示在按钮中间，支持PAPI变量(可删除)
+    texts:
+      - "&e点我发送大喇叭"
+    #默认字符串大小 默认1
+    textScale: "1"
+    #对齐模式 可删除
+    hoverAlign: "center"
+  HornInput:
+    type: input
+    #是否在按下enter后自动清空 默认为 true
+    autoClear: true
+    #是否将&变为§ 也就是说是否允许玩家输入颜色 默认为 false
+    replaceColor: true
+    #是否开启默认的背景 默认为true
+    background: true
+    #在输入框内没有字的时候预览
+    preview: '请在这里输入...'
+    #限制输入的字符长度 默认为 32
+    limit: 32
+    #是否作为焦点 默认为 false
+    focus: true
+    #是否永久聚焦 默认为 false 如果设置为true 不管玩家的鼠标点击了哪里 都可以输入内容进去
+    permanentFocus: false
+    #正则验证 符合正则表达式的才允许输入进去 默认为空
+    # [^(0-9)] 填入后只能输入数字
+    # [^(A-Za-z)] 填入后只能输入字母
+    # [^(\u4e00-\u9fa5)] 填入后只能输入中文
+    # 更多表达式自行百度
+    regular: "[^(0-9)][^(A-Za-z)][^(\u4e00-\u9fa5)]"
+    #是否实时同步内容到服务端 默认为 false（开发者使用的选项，写配置文件直接删去）
+    sync: true
+    #填入clear 或者 留空 为清空输入框 默认为 空
+    #变量库中会有一个变量实时等于该输入槽中的内容 可以在其他dos中引用 变量为 %界面名_输入槽索引名_input% 该界面为 %default_input_input%
+    input: ''
+    #文本自动换行模式(超过输入框的文本换行) 默认为不换行
+    autoWrap: true
+    #是否吞掉点击 默认true
+    #这样就不会穿透点击到其他组件了
+    swallow: true
+    #是否使失效 默认为 false
+    invalid: false
+    #组件的宽高
+    width: "w*0.2"
+    height: "h*0.1"
+    #组件的位置
+    locationX: "w*0.40"
+    locationY: "h*0.340"
+    locationZ: "0"
