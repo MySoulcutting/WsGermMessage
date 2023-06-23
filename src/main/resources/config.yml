@@ -1,2 +1,12 @@
 #大喇叭相关设置
 BigHorn:
+  #判断喇叭名字
+  Name: "&6大喇叭"
+  #权限
+  Permission: "wsgermmessage.bighorn"
+  #消耗数量
+  Consume: 1
+  #显示时间  单位:  秒
+  ShowTime: 5
+  #内容:  %player% 玩家名  %msg%  喇叭内容
+  Message: "&a玩家 &b%player% &a喊话: %msg%  &c<-这是喇叭内容~"

@@ -10,11 +10,11 @@ import java.io.File;
 
 public class HornHud {
     public static GermGuiScreen hud;
-    public static void BigHornHud(Player player,String message){
+    public static void sendBigHornHud(Player player,String message){
         YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(new File(WsGermMessage.INSTANCE.getDataFolder(), "ui\\BigHornHud.yml"));
         hud = GermGuiScreen.getGermGuiScreen("BigHornHud", yamlConfiguration);
         GermGuiLabel germGuiLabel = (GermGuiLabel) hud.getGuiPart("text");
-        germGuiLabel.setText(message);
+        germGuiLabel.setText(WsGermMessage.INSTANCE.getConfig().getString("BigHorn.Message").replace("&","§").replace("%msg%",message).replace("%player%",player.getDisplayName()));
         hud.openHud(player);
     }
     public static void BigHornHudClose(){

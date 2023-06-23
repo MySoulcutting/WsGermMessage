@@ -1,14 +1,20 @@
-#自动公告
-AutoSendMessage:
-  #唯一标识
-  test:
-    #是否启用
-    Enable: true
-    #消息
-    Message: "&6欢迎&b&l%player_name%&6使用WsGermMessage插件"
-    #发送间隔 单位: 秒
-    Delay: 20
-    #是否需要权限才能看到
-    Permission: false
-    #权限
-    PermissionName: "WsGermMessage.test1"
+#唯一标识
+test:
+  #是否启用
+  Enable: true
+  #发送方式  类型:CENTER1 LEFT1 ANCHOR
+  Type: CENTER1
+  #消息   如果使用ANCHOR  格式为   锚点<->消息
+  Message: "&6欢迎&b&l%player_name%&6使用WsGermMessage插件"
+  #发送间隔 单位: 秒
+  Delay: 20
+#唯一标识
+test1:
+  #是否启用
+  Enable: true
+  #发送方式  类型:CENTER1 LEFT1 ANCHOR
+  Type: ANCHOR
+  #消息   如果使用ANCHOR  格式为: 锚点<->消息
+  Message: "anchor1<->&6欢迎&b&l%player_name%&6使用WsGermMessage插件"
+  #发送间隔 单位: 秒
+  Delay: 20
