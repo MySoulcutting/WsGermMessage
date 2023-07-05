@@ -5,31 +5,30 @@ import com.germ.germplugin.api.dynamic.gui.GermGuiInput;
 import com.germ.germplugin.api.event.gui.GermGuiButtonEvent;
 import com.whitesoul.wsgermmessage.WsGermMessage;
 import com.whitesoul.wsgermmessage.gui.HornHud;
+import com.whitesoul.wsgermmessage.util.HornHudUtil;
+import com.whitesoul.wsgermmessage.util.PluginSendMessage;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.scheduler.BukkitRunnable;
+
+import java.io.IOException;
 
 public class GuiButton implements Listener {
     @EventHandler
-    public void GermGuiButtonEvent(GermGuiButtonEvent event) {
+    public void GermGuiButtonEvent(GermGuiButtonEvent event) throws IOException {
         Player player = event.getPlayer();
         if (event.getGermGuiScreen().getGuiName().equals("BigHornGui") && event.getGermGuiButton().getIndexName().equals("SendButton")
                 && event.getEventType() == GermGuiButton.EventType.LEFT_CLICK) {
             GermGuiInput input = (GermGuiInput) event.getGermGuiScreen().getGuiPart("HornInput");
             if (event.getPlayer().getInventory().getItemInMainHand() != null){
                 event.getPlayer().getInventory().getItemInMainHand().setAmount(event.getPlayer().getInventory().getItemInMainHand().getAmount() - WsGermMessage.INSTANCE.getConfig().getInt("BigHorn.Consume"));
-                for (Player p : player.getServer().getOnlinePlayers()) {
-                    HornHud.sendBigHornHud(p, input.getInput());
-                }
                 event.getGermGuiScreen().close();
-                new BukkitRunnable() {
-                    @Override
-                    public void run() {
-                        HornHud.BigHornHudClose();
-                        cancel();
-                    }
-                }.runTaskLaterAsynchronously(com.whitesoul.wsgermmessage.WsGermMessage.INSTANCE, WsGermMessage.INSTANCE.getConfig().getInt("BigHorn.ShowTime") * 20L);
+                for (Player p : player.getServer().getOnlinePlayers()) {
+                    HornHud.name = player.getDisplayName();
+                    HornHud.message = input.getInput();
+                    HornHudUtil.send(p);
+                }
+                PluginSendMessage.send(player.getDisplayName(),input.getInput());
             }
         }
     }

@@ -17,7 +17,7 @@ public class PlayerInteract implements Listener {
         if (event.getItem().getItemMeta() == null) return;
         if (event.getItem().getItemMeta().getDisplayName() == null) return;
         if (event.getItem().getItemMeta().getDisplayName().equals(WsGermMessage.INSTANCE.getConfig().getString("BigHorn.Name").replace("&","§")) && event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
-            HornGui.BigHornGui(event.getPlayer());
+            (new HornGui()).openGui(event.getPlayer());
         }
     }
 }
